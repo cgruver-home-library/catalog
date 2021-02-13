@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: --APP_NAME--
+data:
+  OPEN_LIBRARY_URL: http://openlibrary.org
+  RDBMS_URL: jdbc:mariadb:failover://mariadb-galera-0.galera-cluster.mariadb-galera.svc:3306,mariadb-galera-1.galera-cluster.mariadb-galera.svc:3306,mariadb-galera-2.galera-cluster.mariadb-galera.svc:3306/catalog
+  CORS_ORIGINS: "*"
+  CORS_METHODS: "GET,POST"

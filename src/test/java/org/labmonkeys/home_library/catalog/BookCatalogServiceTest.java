@@ -13,7 +13,7 @@ public class BookCatalogServiceTest {
     @Inject
     private BookCatalogService bookCatalogService;
 
-    public void testBookCatalogServiceOL() throws BookCatalogException{
+    public void testBookCatalogServiceOL() {
         this.bookCatalogService.getBookInfo("9780062225740");
     }
     

@@ -16,7 +16,6 @@ import javax.ws.rs.core.Response.Status;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.logging.Logger;
-import org.labmonkeys.home_library.catalog.BookCatalogException;
 import org.labmonkeys.home_library.catalog.aop.Audited;
 import org.labmonkeys.home_library.catalog.colaborators.open_library.api.OpenLibrary;
 import org.labmonkeys.home_library.catalog.dto.BookInfoDTO;

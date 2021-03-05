@@ -1,5 +1,7 @@
 package org.labmonkeys.home_library.catalog.api;
 
+import java.util.List;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -49,6 +51,10 @@ public class BookCatalogService {
             if (bookInfoEntity == null) {
                 isbn = "ISBN:" + isbn;
                 bookInfoDto = bookInfoMapper.bookInfoOlToBookInfoDTO(openLibrary.getBookInfo(isbn, "json", "data"));
+                List<String> isbns = bookInfoDto.getIsbns();
+                if(!isbns.contains(isbn)) {
+                    isbns.add(isbn);
+                }
                 bookInfoDto.setInCatalog(false);
             } else {
                 bookInfoDto = bookInfoMapper.bookInfoEntityToDto(bookInfoEntity);

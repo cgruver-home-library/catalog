@@ -34,7 +34,7 @@ public interface BookInfoMapper {
 
     @AfterMapping
     default void bookInfoEntityToDtoCustom(BookInfo entity, @MappingTarget BookInfoDTO dto) {
-        List<String> isbns = new ArrayList<>();
+        List<String> isbns = new ArrayList<String>();
         for (ISBN isbn : entity.getIsbns()) {
             isbns.add(isbn.getIsbn());
         }

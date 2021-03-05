@@ -49,8 +49,7 @@ public class BookCatalogService {
         try {
             bookInfoEntity = ISBN.getBookInfoByIsbn(isbn);
             if (bookInfoEntity == null) {
-                isbn = "ISBN:" + isbn;
-                bookInfoDto = bookInfoMapper.bookInfoOlToBookInfoDTO(openLibrary.getBookInfo(isbn, "json", "data"));
+                bookInfoDto = bookInfoMapper.bookInfoOlToBookInfoDTO(openLibrary.getBookInfo("ISBN:" + isbn, "json", "data"));
                 List<String> isbns = bookInfoDto.getIsbns();
                 if(!isbns.contains(isbn)) {
                     isbns.add(isbn);
